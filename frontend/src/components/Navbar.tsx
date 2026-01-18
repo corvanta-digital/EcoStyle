@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Menu, UserIcon, X } from "lucide-react";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -47,6 +47,27 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
+          {/* Icons */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link
+              to="/dashboard"
+              className="text-gray-600 hover:text-primary transition-colors"
+            >
+              <UserIcon size={20} />
+            </Link>
+            {/* <Link
+              to="/cart"
+              className="relative text-gray-600 hover:text-primary transition-colors"
+            >
+              <ShoppingBag size={20} />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-accent text-neutral-900 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center animate-bounce">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link> */}
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700"
@@ -81,6 +102,15 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Services
+            </Link>
+
+            <hr className="border-gray-100" />
+            <Link
+              to="/dashboard"
+              className="flex items-center gap-2 text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <UserIcon size={18} /> Account
             </Link>
           </div>
         </div>

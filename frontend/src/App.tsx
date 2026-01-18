@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ScrollToTop from "./utils";
+import { ScrollToTop } from "./utils";
 import { Footer } from "./components/Footer";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -12,9 +15,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<div>Home Page</div>} />
-            <Route path="/about" element={<div>About Page</div>} />
-            <Route path="/services" element={<div>Services Page</div>} />
-            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route
               path="*"
               element={
